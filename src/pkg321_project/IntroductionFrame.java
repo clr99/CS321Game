@@ -1,16 +1,13 @@
 package pkg321_project;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  *
  * @author Sierra Laney
  */
 public class IntroductionFrame extends javax.swing.JFrame {
+Storyline storyline = new Storyline();
 
     /**
      * Creates new form IntroductionFrame
@@ -114,11 +111,13 @@ public class IntroductionFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NewGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NewGameButtonActionPerformed
-        
+        this.setVisible(false);
+        new GamePlayFrame().setVisible(true);
     }//GEN-LAST:event_NewGameButtonActionPerformed
 
     private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new GamePlayFrame(storyline.tree.current.left.left).setVisible(true);
     }//GEN-LAST:event_ContinueButtonActionPerformed
 
     /**
