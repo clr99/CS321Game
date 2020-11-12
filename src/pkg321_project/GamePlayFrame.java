@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+
 /**
  *
  * @author Sierra Laney
@@ -23,6 +24,13 @@ boolean checkpoint = false;
         initComponents();
         StoryTextArea.setLineWrap(true);
         StoryTextArea.setText(storyline.tree.current.story);
+    }
+    
+    public GamePlayFrame(Node cont) {
+        initComponents();
+        StoryTextArea.setLineWrap(true);
+        storyline.tree.current=cont;
+        StoryTextArea.setText(storyline.tree.current.story); 
     }
 
     /**
@@ -110,9 +118,6 @@ boolean checkpoint = false;
       Node new_node_a = storyline.tree.current;
       update_text_a(StoryTextArea, new_node_a); 
       storyline.tree.current=storyline.tree.current.left; 
-      if(new_node_a==storyline.tree.current.left.left) {
-          checkpoint=true; 
-      }
     }//GEN-LAST:event_jButtonAActionPerformed
 
     private void jButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBActionPerformed
